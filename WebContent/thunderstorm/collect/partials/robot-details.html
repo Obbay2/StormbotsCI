@@ -1,0 +1,392 @@
+<div data-alert class="alert-box warning" ng-show="!newRobotId">
+  <h3 class="alert">STOP</h3>
+  <p>You must enter Robot Details only after <a href="#/robot">Robot</a></p>
+</div>
+
+<form action="submitRobot.json" method="post" name="robotDetailsCollection" id="robotDetailsCollection" ng-show="newRobotId">
+  <div class="row">
+    <div class="medium-8 columns">
+      <div class="callout panel">
+        <h5><small><em>For ID {{newRobotId || "ERROR"}}</em></small></h5>
+        <div class="row">
+          <div class="medium-6 columns">
+            <p> <i class="fi-arrow-right"></i> <i class="fi-torso"></i> &nbsp; <strong>Auto: # Totes Pick Up</strong> </p>
+            <input type="radio" name="autoPickUpTote" value="0" ng-model="autoPickUpTote" />
+            0
+            <input type="radio" name="autoPickUpTote" value="1" ng-model="autoPickUpTote" />
+            1
+            <input type="radio" name="autoPickUpTote" value="2" ng-model="autoPickUpTote" />
+            2
+            <input type="radio" name="autoPickUpTote" value="3" ng-model="autoPickUpTote" />
+            3</div>
+          <div class="medium-6 columns">
+            <p> <i class="fi-arrow-left"></i> <i class="fi-torso"></i> &nbsp; <strong>Auto: # Containers Pick Up</strong> </p>
+            <input type="radio" name="autoPickUpContainer" value="0" ng-model="autoPickUpContainer" />
+            0
+            <input type="radio" name="autoPickUpContainer" value="1" ng-model="autoPickUpContainer" />
+            1
+            <input type="radio" name="autoPickUpContainer" value="2" ng-model="autoPickUpContainer" />
+            2
+            <input type="radio" name="autoPickUpContainer" value="3" ng-model="autoPickUpContainer" />
+            3</div>
+        </div>
+        <hr />
+        <div class="row">
+          <div class="medium-6 columns">
+            <p> <i class="fi-target"></i> &nbsp; <strong>Auto: # Totes Stack</strong> </p>
+            <input type="radio" name="autoCanStackTote" value="0" ng-model="autoCanStackTote" />
+            0
+            <input type="radio" name="autoCanStackTote" value="1" ng-model="autoCanStackTote" />
+            1
+            <input type="radio" name="autoCanStackTote" value="2" ng-model="autoCanStackTote" />
+            2
+            <input type="radio" name="autoCanStackTote" value="3" ng-model="autoCanStackTote" />
+            3</div>
+          <div class="medium-6 columns">
+            <p> <i class="fi-target"></i> &nbsp; <strong>Auto: # Containers Stack</strong> </p>
+            <input type="radio" name="autoCanStackContainer" value="0" ng-model="autoCanStackContainer" />
+            0
+            <input type="radio" name="autoCanStackContainer" value="1" ng-model="autoCanStackContainer" />
+            1
+            <input type="radio" name="autoCanStackContainer" value="2" ng-model="autoCanStackContainer" />
+            2
+            <input type="radio" name="autoCanStackContainer" value="3" ng-model="autoCanStackContainer" />
+            3</div>
+        </div>
+        <hr />
+        <div class="row">
+          <div class="medium-6 columns">
+            <p> <i class="fi-graph-trend"></i> &nbsp; <strong>Auto: Can move to zone</strong> </p>
+            <input type="radio" name="autoMoveToAutozone" value="1" ng-model="autoMoveToAutozone" />
+            Yes
+            <input type="radio" name="autoMoveToAutozone" value="0" ng-model="autoMoveToAutozone" />
+            No
+          </div>
+          <div class="medium-6 columns">
+            <p> <i class="fi-graph-bar"></i> &nbsp; <strong>Tele: # Totes Pick Up</strong> </p>
+            <select name="pickUpTote" ng-model="pickUpTote">
+              <option value="0">0</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+              <option value="9">9</option>
+            </select>
+          </div>
+        </div>
+        <hr />
+        <div class="row">
+          <div class="medium-6 columns">
+            <p> <i class="fi-arrows-out"></i> &nbsp; <strong>Tele: # Containers Pick Up</strong> </p>
+            <input type="radio" name="pickUpContainer" value="1" ng-model="pickUpContainer" />
+            Yes
+            <input type="radio" name="pickUpContainer" value="0" ng-model="pickUpContainer" />
+            No </div>
+          <div class="medium-6 columns">
+            <p> <i class="fi-arrows-in"></i> &nbsp; <strong>Tele: # Litter Pick Up</strong> </p>
+            <select name="pickUpLitter" ng-model="pickUpLitter">
+              <option value="0">0</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+              <option value="9">9</option>
+              <option value="10">10</option>
+              <option value="11">11</option>
+              <option value="12">12</option>
+              <option value="13">13</option>
+              <option value="14">14</option>
+              <option value="15">15</option>
+              <option value="16">16</option>
+              <option value="17">17</option>
+              <option value="18">18</option>
+              <option value="19">19</option>
+              <option value="20">20</option>
+              <option value="21">21</option>
+              <option value="22">22</option>
+              <option value="23">23</option>
+              <option value="24">24</option>
+              <option value="25">25</option>
+              <option value="26">26</option>
+              <option value="27">27</option>
+              <option value="28">28</option>
+              <option value="29">29</option>
+              <option value="30">30</option>
+              <option value="31">31</option>
+              <option value="32">32</option>
+              <option value="33">33</option>
+              <option value="34">34</option>
+              <option value="35">35</option>
+              <option value="36">36</option>
+              <option value="37">37</option>
+              <option value="38">38</option>
+              <option value="39">39</option>
+              <option value="40">40</option>
+              <option value="41">41</option>
+              <option value="42">42</option>
+              <option value="43">43</option>
+              <option value="44">44</option>
+              <option value="45">45</option>
+              <option value="46">46</option>
+              <option value="47">47</option>
+              <option value="48">48</option>
+              <option value="49">49</option>
+              <option value="50">50</option>
+              <option value="51">51</option>
+              <option value="52">52</option>
+              <option value="53">53</option>
+              <option value="54">54</option>
+              <option value="55">55</option>
+              <option value="56">56</option>
+              <option value="57">57</option>
+              <option value="58">58</option>
+              <option value="59">59</option>
+              <option value="60">60</option>
+            </select>
+          </div>
+        </div>
+        <hr />
+        <div class="row">
+          <div class="medium-6 columns">
+            <p> <i class="fi-torso"></i><i class="fi-flag"></i> &nbsp; <strong># of Tote Storage</strong> </p>
+            <select name="toteStorage" ng-model="toteStorage">
+              <option value="0">0</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+              <option value="9">9</option>
+              <option value="10">10</option>
+              <option value="11">11</option>
+              <option value="12">12</option>
+              <option value="13">13</option>
+              <option value="14">14</option>
+              <option value="15">15</option>
+              <option value="16">16</option>
+              <option value="17">17</option>
+              <option value="18">18</option>
+              <option value="19">19</option>
+              <option value="20">20</option>
+              <option value="21">21</option>
+              <option value="22">22</option>
+              <option value="23">23</option>
+              <option value="24">24</option>
+              <option value="25">25</option>
+              <option value="26">26</option>
+              <option value="27">27</option>
+              <option value="28">28</option>
+              <option value="29">29</option>
+              <option value="30">30</option>
+              <option value="31">31</option>
+              <option value="32">32</option>
+              <option value="33">33</option>
+              <option value="34">34</option>
+              <option value="35">35</option>
+              <option value="36">36</option>
+              <option value="37">37</option>
+              <option value="38">38</option>
+              <option value="39">39</option>
+              <option value="40">40</option>
+              <option value="41">41</option>
+              <option value="42">42</option>
+              <option value="43">43</option>
+              <option value="44">44</option>
+              <option value="45">45</option>
+              <option value="46">46</option>
+              <option value="47">47</option>
+              <option value="48">48</option>
+              <option value="49">49</option>
+              <option value="50">50</option>
+              <option value="51">51</option>
+              <option value="52">52</option>
+              <option value="53">53</option>
+              <option value="54">54</option>
+              <option value="55">55</option>
+              <option value="56">56</option>
+              <option value="57">57</option>
+              <option value="58">58</option>
+              <option value="59">59</option>
+              <option value="60">60</option>
+            </select>
+          </div>
+            
+            <div class="medium-6 columns">
+            <p> <i class="fi-torso"></i><i class="fi-arrow-up"></i> &nbsp; <strong># of Container Storage</strong> </p>
+            <select name="containerStorage" ng-model="containerStorage">
+              <option value="0">0</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+              <option value="9">9</option>
+              <option value="10">10</option>
+            </select>
+          </div>
+        </div>
+        <hr />
+        <div class="row">
+          <div class="medium-6 columns">
+            <p> <i class="fi-torso"></i><i class="fi-flag"></i> &nbsp; <strong># of Litter Storage</strong> </p>
+            <select name="litterStorage" ng-model="litterStorage">
+              <option value="0">0</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+              <option value="9">9</option>
+              <option value="10">10</option>
+              <option value="11">11</option>
+              <option value="12">12</option>
+              <option value="13">13</option>
+              <option value="14">14</option>
+              <option value="15">15</option>
+              <option value="16">16</option>
+              <option value="17">17</option>
+              <option value="18">18</option>
+              <option value="19">19</option>
+              <option value="20">20</option>
+              <option value="21">21</option>
+              <option value="22">22</option>
+              <option value="23">23</option>
+              <option value="24">24</option>
+              <option value="25">25</option>
+              <option value="26">26</option>
+              <option value="27">27</option>
+              <option value="28">28</option>
+              <option value="29">29</option>
+              <option value="30">30</option>
+              <option value="31">31</option>
+              <option value="32">32</option>
+              <option value="33">33</option>
+              <option value="34">34</option>
+              <option value="35">35</option>
+              <option value="36">36</option>
+              <option value="37">37</option>
+              <option value="38">38</option>
+              <option value="39">39</option>
+              <option value="40">40</option>
+              <option value="41">41</option>
+              <option value="42">42</option>
+              <option value="43">43</option>
+              <option value="44">44</option>
+              <option value="45">45</option>
+              <option value="46">46</option>
+              <option value="47">47</option>
+              <option value="48">48</option>
+              <option value="49">49</option>
+              <option value="50">50</option>
+              <option value="51">51</option>
+              <option value="52">52</option>
+              <option value="53">53</option>
+              <option value="54">54</option>
+              <option value="55">55</option>
+              <option value="56">56</option>
+              <option value="57">57</option>
+              <option value="58">58</option>
+              <option value="59">59</option>
+              <option value="60">60</option>
+            </select>
+          </div>
+            
+            <div class="medium-6 columns">
+            <p> <i class="fi-torso"></i><i class="fi-arrow-up"></i> &nbsp; <strong>Can get Tote from Chute</strong> </p>
+            <input type="radio" name="canChuteTote" value="1" ng-model="canChuteTote" />
+            Yes
+            <input type="radio" name="canChuteTote" value="0" ng-model="canChuteTote" />
+            No </div>
+        </div>
+        <hr />
+        <div class="row">
+          <div class="medium-6 columns">
+            <p> <i class="fi-torso"></i><i class="fi-flag"></i> &nbsp; <strong>Can get Litter from Chute?</strong> </p>
+            <input type="radio" name="canChuteLitter" value="1" ng-model="canChuteLitter" />
+            Yes
+            <input type="radio" name="canChuteLitter" value="0" ng-model="canChuteLitter" />
+            No </div>
+            
+            <div class="medium-6 columns">
+            <p> <i class="fi-torso"></i><i class="fi-arrow-up"></i> &nbsp; <strong>Tele: Max Tote Stack</strong> </p>
+            <select name="stackTote" ng-model="stackTote">
+              <option value="0">0</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+              <option value="9">9</option>
+            </select>
+          </div>
+        </div>
+        <hr />
+        <div class="row">
+          <div class="medium-6 columns">
+            <p> <i class="fi-torso"></i><i class="fi-flag"></i> &nbsp; <strong>Tele: Can Stack Container?</strong> </p>
+            <input type="radio" name="canStackContainer" value="1" ng-model="canStackContainer" />
+            Yes
+            <input type="radio" name="canStackContainer" value="0" ng-model="canStackContainer" />
+            No </div>
+            
+            <div class="medium-6 columns">
+            <p> <i class="fi-torso"></i><i class="fi-arrow-up"></i> &nbsp; <strong>Tele: Can Stack Litter?</strong> </p>
+            <input type="radio" name="canStackLitter" value="1" ng-model="canStackLitter" />
+            Yes
+            <input type="radio" name="canStackLitter" value="0" ng-model="canStackLitter" />
+            No </div>
+        </div>
+        <hr />
+        <div class="row">
+          <div class="medium-6 columns">
+            <p> <i class="fi-torso"></i><i class="fi-flag"></i> &nbsp; <strong>Highest CoOp Stack</strong> </p>
+            <select name="stackCoop" ng-model="stackCoop">
+              <option value="0">0</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+            </select>
+            </div>
+            
+            <div class="medium-6 columns"></div>
+        </div>
+      </div>
+    </div>
+    <div class="medium-4 columns">
+      <h5> <i class="fi-clipboard-notes"></i> &nbsp; Add any notes you have here:</h5>
+      <div class="row">
+        <div class="medium-12 columns">
+          <textarea placeholder="Notes" name="512" ng-model="robotDetailsNotes"></textarea>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="medium-8 columns"> <a href="#" class="button small secondary left"> Cancel </a>
+      <button type="button" ng-click="submitRobotDetails()" class="button small right"> Save </button>
+    </div>
+  </div>
+</form>

@@ -1,0 +1,8 @@
+td, th{
+	width: 12.5vw;
+}
+.center{
+	margin-left:auto; 
+	margin-right:auto;
+	text-align:center;
+}

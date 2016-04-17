@@ -1,0 +1,84 @@
+HTTP Response refers to a message sent back through HTTP JSON. Always a 200 OK Response status.
+(/rest)
+
+GameService
+	GET (Collection) (/game)
+		Game Objects
+	POST (id) (/game)
+		Game Object
+	PUT (id) (/game)
+		Game Object
+		
+CompetitionService
+	GET (Collection) (/competition)
+		Competition Objects
+	POST (id or HTTP Response) (/competition)
+		Competition Object +
+			Year
+			Competition Order
+	PUT
+		Competition Object
+		
+RoundService
+	GET (Collection) (/round)
+		Round Objects
+	GET (Collection) (/round/[round#])
+		Round Object
+	POST (id or HTTP Response) (/round)
+		Round Object
+	PUT (id) (/round)
+		Round Object
+		
+ScoreService
+	GET (Collection) (/score)
+		Score Objects
+		
+	GETTERS FOR SUMMING TO BE ADDED...
+	
+	
+	
+	POST (id or HTTP Response) (/score)
+		Score Object +
+			RoundId
+			TeamId
+			Stage (0=Pre-game, 1=Auto, 2=Tele)
+	DELETE (/score/{roundNumber})
+		RoundNumber
+		
+TeamService
+	GET (Collection) (/team)
+		Team Objects
+	GET (Collection) (/team/[team#])
+		Team Object
+	POST (id or HTTP Response) (/team)
+		Team Object +
+			TeamNumber
+	PUT (id) (/team)
+		Team Object
+		
+RobotService
+	GET (Collection) (/robot)
+		Robot Objects
+	GET (Collection) (/robot/[team#])
+		Robot Object
+	POST (id or HTTP Response) (/robot)
+		Robot Object +
+			TeamNumber
+	PUT (id) (/robot)
+		Robot Object
+		
+RobotDetailsService
+	GET (Collection) (/robotdetails)
+		RobotDetails Objects
+	GET (Collection) (/robotdetails/[robotId])
+		RobotDetails Object
+	POST (id or HTTP Response) (/robotdetails)
+		RobotDetails Object +
+			RobotId
+	PUT (id) (/robotdetails)
+		RobotDetails Object
+		
+ScrapeService
+	GET (ArrayList<Round>) (/scrape/rounds)  //Gets rounds from web page... testing
+	POST (HTTP Response) (/scrape/rounds)	//Inserts rounds into database
+	PUT (HTTP Response) (/scrape/score_round)  // Updates final scores and then updates current round

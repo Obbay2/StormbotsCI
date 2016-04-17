@@ -1,0 +1,22 @@
+{
+	"robotDetailsId" : "1",
+	"robotId" : "1",
+	"autoPickUpTote" : "1",
+	"autoPickUpContainer" : "1",
+	"autoCanStackTote" : "1",
+	"autoCanStackContainer" : "1",
+	"autoMoveToAutozone" : "1",
+	"pickUpTote" : "1",
+	"pickUpContainer" : "1",
+	"pickUpLitter" : "1",
+	"toteStorage" : "1",
+	"containerStorage" : "1",
+	"litterStorage" : "1",
+	"canChuteTote" : "1",
+	"canChuteLitter" : "1",
+	"stackTote" : "1",
+	"canStackContainer" : "1",
+	"canStackLitter" : "1",
+	"stackCoop" : "1",
+	"notes" : "good stuff"
+}

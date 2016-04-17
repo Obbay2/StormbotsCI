@@ -1,0 +1,348 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Score</title>
+    <link rel="stylesheet" href="css/foundation.css" />
+    <script src="js/vendor/modernizr.js"></script>
+	<link rel="stylesheet" type="text/css" href="main.css">
+
+  </head>
+  <body>
+  
+	<nav class="top-bar" data-topbar role="navigation">
+	  <ul class="title-area">
+		<li class="name">
+		  <h1><a href="#">Thunderstorm</a></h1>
+		</li>
+		 <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+		<li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+	  </ul>
+
+	  <section class="top-bar-section">
+
+		<!-- Left Nav Section -->
+		<ul class="left">
+		  <li><a href="index.html">Team</a></li>
+		  <li class="active"><a href="score.html">Score</a></li>
+		</ul>
+	  </section>
+	</nav>
+	
+	
+	<div class="small-12 columns" style="background-color: #B0B0B0; padding-bottom: 15px; padding-top: 15px;">
+		
+		<form class="small-12 columns show-for-large-up">
+				<ul class="tabs" data-tab role="tablist">
+				  <li class="tab-title active" role="presentational" ><a href="#panel2-1" role="tab" tabindex="0" aria-selected="true" controls="panel2-1">Auto Summing</a></li>
+				  <li class="tab-title" role="presentational" ><a href="#panel2-2" role="tab" tabindex="0"aria-selected="false" controls="panel2-2">Auto Averages</a></li>
+				  <li class="tab-title" role="presentational"><a href="#panel2-3" role="tab" tabindex="0" aria-selected="false" controls="panel2-3">Teleop Summing</a></li>
+				  <li class="tab-title" role="presentational" ><a href="#panel2-4" role="tab" tabindex="0" aria-selected="false" controls="panel2-4">Teleop Averages</a></li>
+				</ul>
+		</form>
+		
+		<form class="small-12 columns hide-for-large-up">
+				<ul class="tabs" data-tab role="tablist">
+				  <li class="tab-title active" role="presentational" ><a href="#panel2-1" role="tab" tabindex="0" aria-selected="true" controls="panel2-1">Auto Sum</a></li>
+				  <li class="tab-title" role="presentational" ><a href="#panel2-2" role="tab" tabindex="0"aria-selected="false" controls="panel2-2">Auto Avg.</a></li>
+				  <li class="tab-title" role="presentational"><a href="#panel2-3" role="tab" tabindex="0" aria-selected="false" controls="panel2-3">Teleop Sum</a></li>
+				  <li class="tab-title" role="presentational" ><a href="#panel2-4" role="tab" tabindex="0" aria-selected="false" controls="panel2-4">Teleop Avg.</a></li>
+				</ul>
+		</form>
+		
+	</div>
+	
+	<div class="tabs-content">
+	
+	  <section role="tabpanel" aria-hidden="false" class="content active" id="panel2-1">
+		  <div class="small-12 columns" style="background-color: #C0C0C0; padding-top: 10px; margin-top: -15px;">
+			<form class="small-12 columns">
+					
+					<div class="small-8 columns">
+						<div class="small-8 columns">
+					      <label>Sort By:
+					        <select id="sorter">
+					          <option value="TEAM_NUMBER">Team Number</option>
+					          <option value="PICK_UP_YELLOW">Pickup Yellow</option>
+					          <option value="FAIL_YELLOW">Fail Yellow</option>
+					          <option value="STACK_YELLOW">Stack Yellow</option>
+					          <option value="PICK_UP_CONTAINER">Pickup Container</option>
+					          <option value="FAIL_CONTAINER">Fail Container</option>
+					          <option value="STACK_CONTAINER">Stack Container</option>
+					          <option value="AUTO_ZONE">Auto Zone</option>
+					        </select>
+					      </label>
+					    </div>
+					    <div class="small-4 columns show-for-large-up" style="padding-top: 20px;">
+					   		<a href="#" onClick="loadAutoSumScoreData(&quot;SORT&quot;)" class="button postfix">Sort Teams</a>
+					    </div>
+					    <div class="small-4 columns hide-for-large-up" style="padding-top: 20px;">
+					   		<a href="#" onClick="loadAutoSumScoreData(&quot;SORT&quot;)" class="button postfix">Sort</a>
+					    </div>
+				    </div>
+				    
+				   	<div class="small-4 columns" style="padding-top:20px;">
+				      <div class="row collapse">
+						<div class="small-8 columns show-for-large-up">
+						  <input type="text" id="textBox" placeholder="Team Number">
+						</div>
+						<div class="small-4 columns show-for-large-up">
+						  <a href="#" onClick="loadAutoSumScoreData(&quot;TEAM_NUMBER&quot;)" class="button postfix">Get Team</a>
+						</div>
+						<div class="small-8 columns hide-for-large-up">
+						  <input type="text" id="textBox" placeholder="Team #">
+						</div>
+						<div class="small-4 columns hide-for-large-up">
+						  <a href="#" onClick="loadAutoSumScoreData(&quot;TEAM_NUMBER&quot;)" class="button postfix">Get</a>
+						</div>
+				      </div>
+				    </div>
+			</form>
+		</div>
+		
+	    <div class="small-12 columns" style="padding-top: 10px;">
+			<table class="center" border="1" id="list">
+				<thead>
+					<tr>
+						<th>Team Number</th>
+						<th>Pickup Yellow</th>
+						<th>Fail Yellow</th>
+						<th>Stack Yellow</th>
+						<th>Pickup Container</th>
+						<th>Fail Container</th>
+						<th>Stack Container</th>
+						<th>Auto Zone</th>
+					</tr>
+				</thead>
+				<tbody>
+
+				</tbody>
+			</table>
+			</div>	
+	  </section>
+	  <section role="tabpanel" aria-hidden="true" class="content" id="panel2-2">
+	    <div class="small-12 columns" style="background-color: #C0C0C0; padding-top: 10px; margin-top: -15px;">
+			<form class="small-12 columns">
+					
+					<div class="small-8 columns">
+						<div class="small-8 columns">
+					      <label>Sort By:
+					        <select id="sorter2">
+					          <option value="TEAM_NUMBER">Team Number</option>
+					          <option value="PICK_UP_YELLOW">Pickup Yellow</option>
+					          <option value="FAIL_YELLOW">Fail Yellow</option>
+					          <option value="STACK_YELLOW">Stack Yellow</option>
+					          <option value="PICK_UP_CONTAINER">Pickup Container</option>
+					          <option value="FAIL_CONTAINER">Fail Container</option>
+					          <option value="STACK_CONTAINER">Stack Container</option>
+					          <option value="AUTO_ZONE">Auto Zone</option>
+					        </select>
+					      </label>
+					    </div>
+					    <div class="small-4 columns show-for-large-up" style="padding-top: 20px;">
+					   		<a href="#" onClick="loadAutoAverageScoreData(&quot;SORT&quot;)" class="button postfix">Sort Teams</a>
+					    </div>
+					    <div class="small-4 columns hide-for-large-up" style="padding-top: 20px;">
+					   		<a href="#" onClick="loadAutoAverageScoreData(&quot;SORT&quot;)" class="button postfix">Sort</a>
+					    </div>
+				    </div>
+				    
+				   	<div class="small-4 columns" style="padding-top:20px;">
+				      <div class="row collapse">
+						<div class="small-8 columns show-for-large-up">
+						  <input type="text" id="textBox2" placeholder="Team Number">
+						</div>
+						<div class="small-4 columns show-for-large-up">
+						  <a href="#" onClick="loadAutoAverageScoreData(&quot;TEAM_NUMBER&quot;)" class="button postfix">Get Team</a>
+						</div>
+						<div class="small-8 columns hide-for-large-up">
+						  <input type="text" id="textBox2" placeholder="Team #">
+						</div>
+						<div class="small-4 columns hide-for-large-up">
+						  <a href="#" onClick="loadAutoAverageScoreData(&quot;TEAM_NUMBER&quot;)" class="button postfix">Get</a>
+						</div>
+				      </div>
+				    </div>
+			</form>
+		</div>
+		
+	    <div class="small-12 columns" style="padding-top: 10px;">
+			<table class="center" border="1" id="list2">
+				<thead>
+					<tr>
+						<th>Team Number</th>
+						<th>Pickup Yellow</th>
+						<th>Fail Yellow</th>
+						<th>Stack Yellow</th>
+						<th>Pickup Container</th>
+						<th>Fail Container</th>
+						<th>Stack Container</th>
+						<th>Auto Zone</th>
+					</tr>
+				</thead>
+				<tbody>
+
+				</tbody>
+			</table>
+			</div>	
+	  </section>
+	  <section role="tabpanel" aria-hidden="true" class="content" id="panel2-3">
+	    <div class="small-12 columns" style="background-color: #C0C0C0; padding-top: 10px; margin-top: -15px;">
+			<form class="small-12 columns">
+					
+					<div class="small-8 columns">
+						<div class="small-8 columns">
+					      <label>Sort By:
+					        <select id="sorter3">
+					          <option value="TEAM_NUMBER">Team Number</option>
+					          <option value="PICK_UP_GRAY">Pickup Gray</option>
+					          <option value="FAIL_GRAY">Fail Gray</option>
+					          <option value="STACK_GRAY">Stack Gray</option>
+					          <option value="PICK_UP_CONTAINER">Pickup Container</option>
+					          <option value="FAIL_CONTAINER">Fail Container</option>
+					          <option value="STACK_CONTAINER">Stack Container</option>
+							  <option value="PICK_UP_LITTER">Pickup Litter</option>
+					          <option value="FAIL_LITTER">Fail Litter</option>
+					          <option value="STACK_LITTER">Score Litter</option>
+					        </select>
+					      </label>
+					    </div>
+					    <div class="small-4 columns show-for-large-up" style="padding-top: 20px;">
+					   		<a href="#" onClick="loadTeleSumScoreData(&quot;SORT&quot;)" class="button postfix">Sort Teams</a>
+					    </div>
+					    <div class="small-4 columns hide-for-large-up" style="padding-top: 20px;">
+					   		<a href="#" onClick="loadTeleSumScoreData(&quot;SORT&quot;)" class="button postfix">Sort</a>
+					    </div>
+				    </div>
+				    
+				   	<div class="small-4 columns" style="padding-top:20px;">
+				      <div class="row collapse">
+						<div class="small-8 columns show-for-large-up">
+						  <input type="text" id="textBox3" placeholder="Team Number">
+						</div>
+						<div class="small-4 columns show-for-large-up">
+						  <a href="#" onClick="loadTeleSumScoreData(&quot;TEAM_NUMBER&quot;)" class="button postfix">Get Team</a>
+						</div>
+						<div class="small-8 columns hide-for-large-up">
+						  <input type="text" id="textBox3" placeholder="Team #">
+						</div>
+						<div class="small-4 columns hide-for-large-up">
+						  <a href="#" onClick="loadTeleSumScoreData(&quot;TEAM_NUMBER&quot;)" class="button postfix">Get</a>
+						</div>
+				      </div>
+				    </div>
+			</form>
+		</div>
+		
+	    <div class="small-12 columns" style="padding-top: 10px;">
+			<table class="center" border="1" id="list3">
+				<thead>
+					<tr>
+						<th>Team Number</th>
+						<th>Pickup Gray</th>
+						<th>Fail Gray</th>
+						<th>Stack Gray</th>
+						<th>Pickup Container</th>
+						<th>Fail Container</th>
+						<th>Stack Container</th>
+						<th>Pickup Litter</th>
+						<th>Fail Litter</th>
+						<th>Score Litter</th>
+					</tr>
+				</thead>
+				<tbody>
+
+				</tbody>
+			</table>
+			</div>
+	  </section>  
+	  <section role="tabpanel" aria-hidden="true" class="content" id="panel2-4">
+	    <div class="small-12 columns" style="background-color: #C0C0C0; padding-top: 10px; margin-top: -15px;">
+			<form class="small-12 columns">
+					
+					<div class="small-8 columns">
+						<div class="small-8 columns">
+					      <label>Sort By:
+					        <select id="sorter4">
+					          <option value="TEAM_NUMBER">Team Number</option>
+					          <option value="PICK_UP_GRAY">Pickup Gray</option>
+					          <option value="FAIL_GRAY">Fail Gray</option>
+					          <option value="STACK_GRAY">Stack Gray</option>
+					          <option value="PICK_UP_CONTAINER">Pickup Container</option>
+					          <option value="FAIL_CONTAINER">Fail Container</option>
+					          <option value="STACK_CONTAINER">Stack Container</option>
+							  <option value="PICK_UP_LITTER">Pickup Litter</option>
+					          <option value="FAIL_LITTER">Fail Litter</option>
+					          <option value="STACK_LITTER">Score Litter</option>
+					        </select>
+					      </label>
+					    </div>
+					    <div class="small-4 columns show-for-large-up" style="padding-top: 20px;">
+					   		<a href="#" onClick="loadTeleAverageScoreData(&quot;SORT&quot;)" class="button postfix">Sort Teams</a>
+					    </div>
+					    <div class="small-4 columns hide-for-large-up" style="padding-top: 20px;">
+					   		<a href="#" onClick="loadTeleAverageScoreData(&quot;SORT&quot;)" class="button postfix">Sort</a>
+					    </div>
+				    </div>
+				    
+				   	<div class="small-4 columns" style="padding-top:20px;">
+				      <div class="row collapse">
+						<div class="small-8 columns show-for-large-up">
+						  <input type="text" id="textBox4" placeholder="Team Number">
+						</div>
+						<div class="small-4 columns show-for-large-up">
+						  <a href="#" onClick="loadTeleAverageScoreData(&quot;TEAM_NUMBER&quot;)" class="button postfix">Get Team</a>
+						</div>
+						<div class="small-8 columns hide-for-large-up">
+						  <input type="text" id="textBox4" placeholder="Team #">
+						</div>
+						<div class="small-4 columns hide-for-large-up">
+						  <a href="#" onClick="loadTeleAverageScoreData(&quot;TEAM_NUMBER&quot;)" class="button postfix">Get</a>
+						</div>
+				      </div>
+				    </div>
+			</form>
+		</div>
+		
+	    <div class="small-12 columns" style="padding-top: 10px;">
+			<table class="center" border="1" id="list4">
+				<thead>
+					<tr>
+						<th>Team Number</th>
+						<th>Pickup Gray</th>
+						<th>Fail Gray</th>
+						<th>Stack Gray</th>
+						<th>Pickup Container</th>
+						<th>Fail Container</th>
+						<th>Stack Container</th>
+						<th>Pickup Litter</th>
+						<th>Fail Litter</th>
+						<th>Score Litter</th>
+					</tr>
+				</thead>
+				<tbody>
+
+				</tbody>
+			</table>
+			</div>
+	  </section>
+	</div>
+	
+	
+	   
+    <script src="js/vendor/jquery.js"></script>
+    <script src="js/foundation.min.js"></script>
+    <script src="js/score.js"></script>
+    <script>
+    $(document).foundation();
+	  
+	$(document).ready(function(){
+		loadAutoSumScoreData("TEAM_NUMBER");
+		loadAutoAverageScoreData("TEAM_NUMBER");
+		loadTeleSumScoreData("TEAM_NUMBER");
+		loadTeleAverageScoreData("TEAM_NUMBER");
+	});
+    </script>
+  </body>
+</html>

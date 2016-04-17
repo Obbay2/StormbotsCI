@@ -1,0 +1,18 @@
+{
+	"robotId" : "1",
+	"teamId" : "1",
+	"gameId" : "1",
+	"driveTrain" : "DriveT",
+	"driveTrainMotorsNumber" : "2",
+	"driveTrainMotorsTypes" : "goodOnes",
+	"otherMotorsNumber" : "2",
+	"otherMotorsTypes" : "Good",
+	"weight" : "666",
+	"programLanguage" : "c",
+	"autonomous" : "1",
+	"picture" : "",
+	"notes" : "",
+	"year" : "1918",
+	"teamNumber" : "1",
+	"watching" : "1"
+}

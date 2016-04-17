@@ -1,0 +1,286 @@
+tml {
+    overflow-y: scroll;
+}
+
+.size-12 { font-size: 12px; }
+
+.size-14 { font-size: 14px; }
+
+.size-16 { font-size: 16px; }
+
+.size-18 { font-size: 18px; }
+
+.size-21 { font-size: 21px; }
+
+.size-24 { font-size: 24px; }
+
+.size-36 { font-size: 36px; }
+
+.size-48 { font-size: 48px; }
+
+.size-60 { font-size: 60px; }
+
+.size-72 { font-size: 72px; }
+
+
+.title-area {
+	padding-left:45px;	
+}
+
+.show-hide {
+	-webkit-transition:all linear 0.5s;
+	transition:all linear 0.5s;
+	opacity:1;
+	margin-top:0px;
+}
+ 
+.show-hide.ng-hide-add, .show-hide.ng-hide-remove {
+	display:block!important;
+}
+ 
+.show-hide.ng-hide {
+	opacity:0;
+	margin-top:-420px;
+}
+
+/* XEditable - Pluggin Bootstrap Holes */
+.editable-error {
+	color: #b94a48;
+}
+
+
+/* CSS FOR SCORE */
+
+#waitForTeams {
+	display:none;
+	position:relative;
+	left:160px;
+	top:-18px;
+}
+
+#roundNotEntered {
+	margin-top:-10px;
+	padding-left:40px;
+	padding-bottom:22px;
+}
+
+#startTeamsBar {
+	display:none;
+}
+
+.collection-thanks {
+	padding-top:30px;
+}
+
+.start-collecting-button {
+	margin-top:5px;
+}
+
+.no-padding {
+	padding-right:0px!important;
+	padding-left:0px!important;	
+}
+
+.small-padding {
+	padding-top:10px!important;
+	padding-left:10px!important;
+}
+
+.small-margin-bottom {
+	margin-bottom:4px!important;	
+}
+
+
+@media only screen and (max-width: 40em) { 
+	.small-padding-button {
+		padding-right:25px!important;
+		padding-left:25px!important;
+	}
+	#waitForTeams {
+		position:relative;
+		left:120px;
+		top:-14px;
+	}
+	.collection-thanks {
+		padding-top:0px!important;
+		font-size:5px!important;
+		text-align:center!important;
+	}
+	.scoreRoundEditButton {
+		margin-left:2px;
+	}
+	.preload-title {
+		margin-top: 0px!important;
+	}
+} 
+
+@media only screen and (max-width: 20em) { 
+	.small-padding-button {
+		padding-right:15px!important;
+		padding-left:15px!important;
+	}
+	.cancel-modal {
+		display:none;
+	}
+}
+
+#statusLoading {
+	padding-left:20px;
+	padding-right:0px!important;
+	margin-left:-20px;
+}
+
+#statusError {
+	margin-left:-20px!important;
+	padding-right:60px;
+}
+
+.hidden-for-large-up #statusError {
+	padding-right:9px;
+}
+
+#statusLoading, #statusSaved, #statusError {
+	display:block;
+}
+
+/* END MODAL CSS */
+
+#waitTopTinyLarge, #waitTopTinyMedium {
+	margin-right:65px;
+	padding-top:12px;
+	margin-bottom:-12px;
+	margin-left:-10px;
+	/*position:relative;
+	top:3px;
+	right:5px;*/
+}
+#waitTopTinySmall {
+	margin-right:22px;
+	padding-top:15px;
+	margin-bottom:-10px;
+	margin-left:-16px;
+}
+#instructionPanel{
+	padding-top: 5px;
+	padding-bottom: 8px;
+	margin-bottom: 0px;
+}
+.instructionPanelText{
+	font-size: 12px;
+	margin-right: 5px;
+	margin-left: 5px;
+}
+#stageSelect .round .button{
+	padding: 5px;
+}
+.button-group li a{
+	margin-bottom: 0px!important;	
+}
+
+.doneButton {
+	margin:5px!IMPORTANT;
+	padding:5px!IMPORTANT;
+	margin-right:22px!IMPORTANT;
+}
+
+
+
+#contentContainer {
+	width: 100%;
+	border: 5px black solid;
+	overflow: hidden;
+	cursor: pointer;
+}
+#initialActionChooser, #robotPositionStar, #yellowTotePlacementChoose {
+	position: relative;
+}
+
+
+
+.prompt {
+	background-color: #EEE;
+	position: relative;
+	width: 150px;
+	height: auto;
+	padding: 5px;
+
+	border: solid;
+	border-width: 1px;
+	border-color: yellow;
+
+	text-align: center;
+}
+
+.prompt:after {
+	content: ' ';
+	height: 0;
+	position: absolute;
+	width: 0;
+
+	border: 10px solid transparent;
+	border-bottom-color: #EEE;
+	
+	top: -20px;
+	left: 70%;
+}
+
+.fieldElements{
+	width: 40px;
+	padding: 2px;
+	cursor: pointer;
+}
+
+.fieldElementsLitter{
+	width: 120px;
+	padding: 2px;
+	cursor: pointer;
+}
+
+.endPosButton{
+	width: 40px;
+	padding: 2px;
+	margin-bottom: 0px;
+	cursor: pointer;
+	position: relative;
+	top: -8px;
+}
+
+.selectActionButton {
+	font-size:12px;
+	width: 42px;
+	height: 40px;
+	padding: 2px;
+	/*margin: 0 2px 0 2px;*/
+	margin-bottom: 0px;
+	cursor: pointer;
+}
+
+#initialActionChooser .round a {
+	margin-bottom: 0px;
+	border: solid;
+	border-width: 1px;
+}
+
+#initialActionChooser .yellowOptions a {
+	padding: 20px 10px 20px 10px;
+}
+
+#initialActionChooser .placeOptions a {
+	padding: 20px 15px 20px 15px;
+}
+
+.activeButton{
+	background-color: #BBB!IMPORTANT;
+}
+
+.clickPos {
+	position: fixed;
+	top: 400px;
+}
+
+.stacksGraph{
+	position:relative;
+	left:-150px;
+}
+
+/* END SCORE CSS */`

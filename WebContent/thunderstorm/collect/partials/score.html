@@ -1,0 +1,87 @@
+ <div class="row">
+    <div class="columns small-12">
+        <div class="panel" id="instructionPanel">
+            <div class="row">
+                <div class="columns large-3">
+                    <div class="row">
+                        <div class="columns large-6 small-4">
+                            <span class="label hidden-for-small-only">Round</span>
+                            <span class="label hidden-for-medium-up">R</span>
+                            <span class="instructionPanelText">{{roundNumber}}</span>
+                        </div>
+                        <div class="columns large-6 small-5">
+                            <span class="label hidden-for-small-only">Team</span>
+                            <span class="label hidden-for-medium-up">T</span>
+                            <span class="instructionPanelText">{{teamNumber}}</span>  
+                        </div>
+                        <div class="columns hidden-for-large-up small-3">
+                    		<span class="label success right hidden-for-small-only" id="savedStatusLabel" ng-show="saveStatus===1"><i class="fi-check"></i> Saved</span>
+                            <span id="statusLoading" class="label hidden-for-small-only" ng-show="saveStatus===2"><div id="waitTopTinyMedium"><script type="text/javascript">$("#waitTopTinyMedium").spin("tiny", "white");</script></div>Saving...</span>
+                    		<span id="statusError" class="label alert hidden-for-small-only" ng-show="saveStatus===0"><i class="fi-alert"></i> ERROR</span>
+                            
+                            
+                    		<span class="label success right hidden-for-medium-up" id="savedStatusLabel" ng-show="saveStatus===1"><i class="fi-check"></i></span>
+                            <span id="statusLoading" class="label hidden-for-medium-up" ng-show="saveStatus===2"><div id="waitTopTinySmall"><script type="text/javascript">$("#waitTopTinySmall").spin("tiny", "white");</script></div>&nbsp;</span>
+                    		<span id="statusError" class="label alert hidden-for-medium-up" ng-show="saveStatus===0"><i class="fi-alert"></i></span>
+                            
+                		</div>
+                    </div>
+                </div>
+                <div class="columns large-3 medium-4">
+                    <div class="row">
+                        <div class="columns large-3 medium-3 small-2">
+                            <span class="label hidden-for-small-only">Stage</span>
+                            <span class="label hidden-for-medium-up">S</span>
+                        </div>
+                        <div class="columns large-9 medium-9 small-10">
+                            <div id="stageSelect">
+                                <ul class="button-group round">
+                                  <li><a href="" class="tiny button secondary" ng-class="{'activeButton': currentStage===0}" ng-click="changeStage(0)"><span class="show-for-large-up">Pre-Game</span><span class="hidden-for-large-up">Pre</span></a></li>
+                                  <li><a href="" class="tiny button secondary" ng-class="{'activeButton': currentStage===1}" ng-click="changeStage(1)">Auto</a></li>
+                                  <li><a href="" class="tiny button secondary" ng-class="{'activeButton': currentStage===2}" ng-click="changeStage(2)">Teleop</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="columns large-5 medium-8">                                               
+                    <span class="label warning hidden-for-small-only" id="nowLabel">NOW</span>
+                    <span class="label warning hidden-for-medium-up" id="nowLabelSmall">N</span>
+                    <span class="instructionPanelText" id="nowPrompt">{{nowText}}</span>
+                </div>
+                
+                 <div class="columns show-for-large-up large-1">
+                    <span class="label success right hidden-for-small-only" id="statusSaved" ng-show="saveStatus===1"><i class="fi-check"></i> Saved</span>
+                    <span id="statusLoading" class="label" ng-show="saveStatus===2"><div id="waitTopTinyLarge"><script type="text/javascript">$("#waitTopTinyLarge").spin("tiny", "white");</script></div>Saving...</span>
+                    <span id="statusError" class="label alert" ng-show="saveStatus===0"><i class="fi-alert"></i> ERROR</span>
+                 </div>
+           </div>         
+        </div>
+        
+        <span class="doneButton button tiny" ng-click="starBot()"><i class="fi-star"></i>&nbsp; Star this bot</span>
+        
+        <span class="doneButton button right tiny" onclick="location.reload()">&nbsp;&nbsp; Done &#x279f; </span>
+        
+        
+        <img id="contentContainer" ng-click="getClickPosition($event)" src="http://ci.stormbots.com/CITools2015/img/field.png" />
+              
+        <div id="initialActionChooser" class="prompt" ng-class="{'hide': open===false}">
+        </div>
+
+        <img id="robotPositionStar" ng-class="{'hide': starOpen===false}" src="http://ci.stormbots.com/CITools2015/img/star.png" height="20" width="20"/>
+
+        <div id="yellowTotePlacementChoose" ng-class="{'hide': yellowPlacementChooseOpen===false}">
+            <ul class="button-group round">
+              <li><a href="" class="button tiny" ng-click="selectYellowTotePlacement(1)">Inside</a></li>
+              <li><a href="" class="button alert tiny" ng-click="selectYellowTotePlacement(0)">Outside</a></li>
+            </ul>
+        </div>
+
+        <!--<div class="clickPos" style="padding-top:200px;">
+	    	Click Position-
+	    	X: <span id="xLabel">{{posX}}</span>%
+	    	Y: <span id="yLabel">{{posY}}</span>%
+	    </div>-->
+        
+    </div>       
+</div>

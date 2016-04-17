@@ -1,0 +1,11 @@
+{
+	"competitionId" : "1",
+	"name" : "Competition",
+	"city" : "Portland",
+	"state" : "OR",
+	"current" : "1",
+	"competitionOrder" : "1",
+	"url" : "",
+	"currentRound" : "",
+	"year" : "1918"
+}
